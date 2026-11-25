@@ -1,0 +1,215 @@
+{
+  "schema_version": "synthetic-snapshot-input-0.1",
+  "build_version": "synthetic-catalog-builder-0.1.0",
+  "record_schema_version": "catalog-pipeline-draft-0.1.0",
+  "synthetic": true,
+  "artifact_kind": "catalog",
+  "release_id": "urn:pya:synthetic:build-release",
+  "release_revision": 1,
+  "parent_release": null,
+  "excluded_candidate_count": 3,
+  "records": [
+    {
+      "candidate": {
+        "id": "urn:pya:synthetic:build-candidate:1",
+        "revision": 1
+      },
+      "record": {
+        "schema_version": "catalog-pipeline-draft-0.1.0",
+        "synthetic": true,
+        "id": "urn:pya:synthetic:build-record:1",
+        "revision": 1,
+        "entity_kind": "model_release",
+        "display_name": "  Fictional café é — 1.00  ",
+        "lifecycle": "candidate",
+        "claims": [
+          {
+            "id": "urn:pya:synthetic:build-record:1:claim:0",
+            "path": "spec.memory",
+            "value_type": "decimal",
+            "value": "-0.00100",
+            "evidence": {
+              "class": "Vendor claim",
+              "confidence": "Unverified",
+              "verification": "not_verified",
+              "basis": "Fictional source wording for parser and policy tests only."
+            },
+            "sources": [
+              {
+                "source_id": "urn:pya:synthetic:source:fictional-lab",
+                "material_id": "urn:pya:synthetic:material:metadata:1",
+                "url": "https://example.invalid/synthetic/fictional-lab",
+                "observed_at": "2026-10-01T12:00:00Z",
+                "source_revision": "fictional-fixture-1"
+              }
+            ],
+            "conditions": [
+              "Synthetic fixture only; no empirical or deployment meaning."
+            ]
+          },
+          {
+            "id": "urn:pya:synthetic:build-record:1:claim:1",
+            "path": "evidence.independent_result",
+            "value_type": "unknown",
+            "unknown_reason": "No independently reproduced result exists for this fictional example.",
+            "evidence": {
+              "class": "Estimate",
+              "confidence": "Unverified",
+              "verification": "not_verified",
+              "basis": "Illustrates a known evidence gap; no numerical estimate is supplied."
+            },
+            "sources": [
+              {
+                "source_id": "urn:pya:synthetic:source:fictional-lab",
+                "material_id": "urn:pya:synthetic:material:metadata:1",
+                "url": "https://example.invalid/synthetic/fictional-lab",
+                "observed_at": "2026-10-01T12:00:00Z",
+                "source_revision": "fictional-fixture-1"
+              }
+            ],
+            "conditions": [
+              "Unknown must not become false, zero, unsupported, or measured."
+            ]
+          }
+        ],
+        "relationships": [],
+        "unknowns": [
+          "All identities and claims are fictional.",
+          "No publication permission for a real source or product is asserted."
+        ]
+      },
+      "evidence": {
+        "id": "urn:pya:synthetic:build-evidence:1",
+        "revision": 1,
+        "sha256": "4e27dfe20fd1e64c6a402c34346ffb62c897d744e89e0294c9202e349f1833b6"
+      },
+      "packet": {
+        "id": "urn:pya:synthetic:build-packet:1",
+        "revision": 1,
+        "sha256": "7adc359371ff183deab680dc7196f81623bb2f6cfafef2e5a0d70c1400a28be1"
+      },
+      "projection": {
+        "schema_version": "synthetic-whole-record-projection-0.1",
+        "record_sha256": "d3652b16b146e42095778b94b7b49ee0bdeb918e7d8130c3aa6f35d6ca3c7e39",
+        "rights": {
+          "id": "urn:pya:synthetic:build-rights:1",
+          "revision": 1,
+          "sha256": "15d1ffad7a1b4a70ea3d212bb8687cc0812d0e7d2804426cda897e5cacc26a03"
+        },
+        "notices": [
+          {
+            "id": "urn:pya:synthetic:notice:1",
+            "text": "Fictional attribution only; no real rights grant or authenticated review."
+          }
+        ]
+      },
+      "review": {
+        "id": "urn:pya:synthetic:build-review:1",
+        "revision": 1,
+        "binding_sha256": "37025d111e244f7fe8cc3ef3d949b3e68296d13423d622e4a09908bfefcd7d50",
+        "outcome": "include-synthetic"
+      }
+    },
+    {
+      "candidate": {
+        "id": "urn:pya:synthetic:build-candidate:2",
+        "revision": 1
+      },
+      "record": {
+        "schema_version": "catalog-pipeline-draft-0.1.0",
+        "synthetic": true,
+        "id": "urn:pya:synthetic:build-record:2",
+        "revision": 1,
+        "entity_kind": "model_release",
+        "display_name": "  Fictional café é — 1.00  ",
+        "lifecycle": "candidate",
+        "claims": [
+          {
+            "id": "urn:pya:synthetic:build-record:2:claim:0",
+            "path": "spec.memory",
+            "value_type": "decimal",
+            "value": "-0.00100",
+            "evidence": {
+              "class": "Vendor claim",
+              "confidence": "Unverified",
+              "verification": "not_verified",
+              "basis": "Fictional source wording for parser and policy tests only."
+            },
+            "sources": [
+              {
+                "source_id": "urn:pya:synthetic:source:fictional-lab",
+                "material_id": "urn:pya:synthetic:material:metadata:1",
+                "url": "https://example.invalid/synthetic/fictional-lab",
+                "observed_at": "2026-10-01T12:00:00Z",
+                "source_revision": "fictional-fixture-1"
+              }
+            ],
+            "conditions": [
+              "Synthetic fixture only; no empirical or deployment meaning."
+            ]
+          },
+          {
+            "id": "urn:pya:synthetic:build-record:2:claim:1",
+            "path": "evidence.independent_result",
+            "value_type": "unknown",
+            "unknown_reason": "No independently reproduced result exists for this fictional example.",
+            "evidence": {
+              "class": "Estimate",
+              "confidence": "Unverified",
+              "verification": "not_verified",
+              "basis": "Illustrates a known evidence gap; no numerical estimate is supplied."
+            },
+            "sources": [
+              {
+                "source_id": "urn:pya:synthetic:source:fictional-lab",
+                "material_id": "urn:pya:synthetic:material:metadata:1",
+                "url": "https://example.invalid/synthetic/fictional-lab",
+                "observed_at": "2026-10-01T12:00:00Z",
+                "source_revision": "fictional-fixture-1"
+              }
+            ],
+            "conditions": [
+              "Unknown must not become false, zero, unsupported, or measured."
+            ]
+          }
+        ],
+        "relationships": [],
+        "unknowns": [
+          "All identities and claims are fictional.",
+          "No publication permission for a real source or product is asserted."
+        ]
+      },
+      "evidence": {
+        "id": "urn:pya:synthetic:build-evidence:2",
+        "revision": 1,
+        "sha256": "5ce2e618cb005a5e15afea5aad26dbcb03d8e20f1a42791951c8753f9697763c"
+      },
+      "packet": {
+        "id": "urn:pya:synthetic:build-packet:2",
+        "revision": 1,
+        "sha256": "dcccea67ebdee8bdf228007893036403e0d83c1cde0a7bdaa2d42c2d81ce9d94"
+      },
+      "projection": {
+        "schema_version": "synthetic-whole-record-projection-0.1",
+        "record_sha256": "fa11fdffdf7063d90a92c1227947238c0a705ca15f9497022fe9b416010233fa",
+        "rights": {
+          "id": "urn:pya:synthetic:build-rights:2",
+          "revision": 1,
+          "sha256": "10b630bdec88f8ae056a06553bdb1fbe4c3c8eba985da197913d82fe348cdcae"
+        },
+        "notices": [
+          {
+            "id": "urn:pya:synthetic:notice:2",
+            "text": "Fictional attribution only; no real rights grant or authenticated review."
+          }
+        ]
+      },
+      "review": {
+        "id": "urn:pya:synthetic:build-review:2",
+        "revision": 1,
+        "binding_sha256": "0dd9fe48d34f09466bbcbaeffd221b2333176e30a59b42f5f5fd01484c5d2776",
+        "outcome": "include-synthetic"
+      }
+    }
+  ]
+}

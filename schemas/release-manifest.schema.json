@@ -1,0 +1,271 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/pick-your-ai/schemas/synthetic-release-manifest-0.1.schema.json",
+  "title": "Synthetic catalog snapshot manifest 0.1",
+  "description": "New partial offline proposal. Hashes bind caller assertions and actual bytes; they do not authenticate evidence, rights, reviews or releases. No production channel is supported.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "synthetic": {
+      "const": true
+    },
+    "publication_eligible": {
+      "const": false
+    },
+    "channel": {
+      "const": "synthetic"
+    },
+    "authenticated": {
+      "const": false
+    },
+    "rights_cleared": {
+      "const": false
+    },
+    "schema_version": {
+      "const": "synthetic-release-manifest-0.1"
+    },
+    "build_version": {
+      "const": "synthetic-catalog-builder-0.1.0"
+    },
+    "input_schema_version": {
+      "const": "synthetic-snapshot-input-0.1"
+    },
+    "record_schema_version": {
+      "const": "catalog-pipeline-draft-0.1.0"
+    },
+    "projection_schema_version": {
+      "const": "synthetic-whole-record-projection-0.1"
+    },
+    "artifact_kind": {
+      "const": "catalog"
+    },
+    "release_id": {
+      "$ref": "#/$defs/id"
+    },
+    "release_revision": {
+      "$ref": "#/$defs/revision"
+    },
+    "parent_release": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/pin"
+        }
+      ]
+    },
+    "excluded_candidate_count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1000000
+    },
+    "input_sha256": {
+      "$ref": "#/$defs/hash"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "$ref": "#/$defs/record"
+      }
+    },
+    "artifacts": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "catalog": {
+          "$ref": "#/$defs/artifact"
+        },
+        "catalog_gzip": {
+          "$ref": "#/$defs/artifact"
+        },
+        "index": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "sha256": {
+              "$ref": "#/$defs/hash"
+            },
+            "size_bytes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 65536
+            }
+          },
+          "required": [
+            "sha256",
+            "size_bytes"
+          ]
+        }
+      },
+      "required": [
+        "catalog",
+        "catalog_gzip",
+        "index"
+      ]
+    }
+  },
+  "required": [
+    "synthetic",
+    "publication_eligible",
+    "channel",
+    "authenticated",
+    "rights_cleared",
+    "schema_version",
+    "build_version",
+    "input_schema_version",
+    "record_schema_version",
+    "projection_schema_version",
+    "artifact_kind",
+    "release_id",
+    "release_revision",
+    "parent_release",
+    "excluded_candidate_count",
+    "input_sha256",
+    "records",
+    "artifacts"
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^urn:pya:synthetic:[a-z0-9][a-z0-9:._-]{0,139}(?![\\s\\S])"
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}(?![\\s\\S])"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000000000
+    },
+    "candidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "$ref": "#/$defs/revision"
+        }
+      },
+      "required": [
+        "id",
+        "revision"
+      ]
+    },
+    "pin": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      },
+      "required": [
+        "id",
+        "revision",
+        "sha256"
+      ]
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "size_bytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2097152
+        }
+      },
+      "required": [
+        "sha256",
+        "size_bytes"
+      ]
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "candidate": {
+          "$ref": "#/$defs/candidate"
+        },
+        "record": {
+          "$ref": "#/$defs/pin"
+        },
+        "input_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "evidence": {
+          "$ref": "#/$defs/pin"
+        },
+        "packet": {
+          "$ref": "#/$defs/pin"
+        },
+        "projection_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "rights": {
+          "$ref": "#/$defs/pin"
+        },
+        "notices_sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "review": {
+          "$ref": "#/$defs/pin"
+        },
+        "notices": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/notice"
+          }
+        }
+      },
+      "required": [
+        "candidate",
+        "record",
+        "input_sha256",
+        "evidence",
+        "packet",
+        "projection_sha256",
+        "rights",
+        "notices_sha256",
+        "review",
+        "notices"
+      ]
+    },
+    "notice": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 2048
+        }
+      },
+      "required": [
+        "id",
+        "text"
+      ]
+    }
+  }
+}
